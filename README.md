@@ -1,7 +1,15 @@
 # Curso Docker
 
 ## Notas
-1. La capas en un dockerfile son de solo lectura si generamos una imagen con el mismo nombre:tag.
+1. El Document-Root de Docker donde tenemos el target de la aplicación, podemos modificar su emplazamiento a
+    nuestro gusto, supone tener en cuenta el mover tambien las imágenes a donde lo queramos transportar.
+    
+    Pasos a seguir:
+    - a) Cambiar el directorio del root de docker.
+    - b) Conservar los archivos moviéndolos a la nueva localización.
+    
+    Consultar sección 4 del curso en udemy.
+2. La capas en un dockerfile son de solo lectura si generamos una imagen con el mismo nombre:tag.
 Se crea lo que se llama una Dangling Image 'Imagen colgada'.
 
 ## Docker file bunenas prácticas

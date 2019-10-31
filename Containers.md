@@ -17,7 +17,7 @@ Borrar un contenedor:
 Borrar todos los contenedores de golpe:
 - docker ps -q | xargs docker rm -f
 
-Borrar TODOS los contenedores desde un inicio:
+Borrar TODOS los contenedores desde un inicio (con sus volúmenes anónimos también):
 - docker rm -fv $(docker ps -aq)
 
 Renombrar un contenedor 1º nombre 2º nombre nuevo:
@@ -60,3 +60,16 @@ docker exec -ti environment bash
 
 # $ env --> comprobamos las variables de entorno del sistema
 ```
+## Docker commit
+Nos sirve para congelar un contenedor y luego poderlo usar como imagen en cualquier momento.
+Nota: es mejor usar Volumenes.
+- docker commit centos centos-resultante
+
+centos-resultante será la nueva imagen con los cambios realizados al contenedor
+
+Nota: Si se guarda algo en un volumen (dentro) aunque se haga un commit no se van a guardar los cambios
+
+## Destruir contenedores automaticamente
+Si hacemos un docker ps despues de salir del contenedor, nos daramos cuenta de que el contenedor se ha borrado
+- docker run --rm -ti --name centos centos bash
+
