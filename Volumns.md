@@ -6,8 +6,14 @@ Listar volúmenes:
 Eliminar volúmenes:
 - docker rm "NOMBRE_DEL_VOLUMEN"
 
+Eliminar volúmenes colgados:
+- docker volume ls -f dangling=true -q | xargs docker volume rm
+
 Eliminar todos los volúmenes:
 - docker volume prune
+
+Listar volúmenes colgados:
+- docker volume ls -f dangling=true
 
 Los volúmenes permiten almacenar los datos del contenedor y persistirlos en nuestra máquina. Muy útil para una base de datos.
 
