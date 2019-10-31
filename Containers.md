@@ -8,6 +8,9 @@
 Correr un contenedor en 2º plano con la imagen de jenkins oficial ejemplo:
 - docker run -d jenkins
 
+Listar el último contenedor usado:
+- docker ps  -l
+
 Borrar un contenedor:
 - docker rm -f "NOMBRE"
 

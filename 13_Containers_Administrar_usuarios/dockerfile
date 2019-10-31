@@ -1,0 +1,8 @@
+FROM centos
+
+ENV prueba 1234
+
+RUN useradd carlos
+
+#Si lo quitamos entrará como root por defecto
+USER carlos
