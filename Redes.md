@@ -25,3 +25,12 @@ Lo importante es que se llama docker0 y te asigna un rango de subnet. Si creamos
 - docker run -d nginx
 - docker inspect stoic_wozniak
 Vemos que la ip es --> "IPAddress": "172.17.0.2", está dentro del rango.
+
+Para ver las redes de docker por defecto lanzamos:
+- docker network ls | grep bridge
+- docker network inspect bridge
+
+Entre contenedores podemos hacer ping porque se encuentran en la misma red
+- docker run -dti centos
+con docker inspect "NOMBRE_DEL_CONTENEDOR" sacamos la ip del contenedor y probamos a hacer ping al otro contenedor
+-  docker exec -ti affectionate_sanderson bash
