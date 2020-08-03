@@ -57,7 +57,7 @@ Levantamos el contenedor mediante:
 Entrar al bash del contenedor:
 - docker exec -it "NOMBRE_DEL_CONTENEDOR" /bin/bash
 
-## Intalacion certificado SSL (openssl)
+## Instalación certificado SSL (openssl)
 ```
 $> openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout docker.key -out docker.crt
 ```
