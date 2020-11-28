@@ -21,3 +21,39 @@ a los que están escuchando | p pid de la app | v verbose | n info (host puerto)
 A continuación levantamos el contenedor de oracle si tenemos disponible el puerto. Usamos el puerto 1515 de nuestra máquina. Por el momento en el STATUS lo vamos a ver --> Up 2 minutes (healthy) cuando se termine de configurar deberá de ponerse en (started).
 
 ```docker run -d -p 8080:8080 -p 1515:1521 --name real-oracle-db store/oracle/database-enterprise:12.2.0.1```
+
+Podemos ver que tenemos el contenedor levantado con:
+
+```
+    docker logs real-oracle-db
+    docker exec -ti real-oracle-db bash
+```
+
+Probar el cliente sql plus desde el contenedor.
+
+```docker exec -ti real-oracle-db bash -c "source /home/oracle/.bashrc; sqlplus /nolog"```
+
+Usuario y contraseña:
+
+```connect sys as sysdba    |||||   Oradoc_db1```
+
+## Creación de usuario y privilegios
+
+Modificamos la sesión para porder lanzar scripts.
+
+```alter session set "_oracle_script"=true;```
+
+Creación de usuario y contraseña:
+
+```create user balsalobre identified by supersegura```
+
+Permisos para trabajar con este usuario.
+
+```GRANT CONNECT, RESOURCE, DBA TO balsalobre;```
+
+Probamos el acceso con un cliente de base de datos [script](./insert_data.sql)
+
+![Datos de acceso]( ./connection_data.png)
+
+
+
