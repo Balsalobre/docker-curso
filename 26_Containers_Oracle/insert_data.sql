@@ -2,7 +2,7 @@ select username as schema_name
 from sys.dba_users
 order by username;
 
-CREATE TABLE openwebinar_oracle_docker(KEY integer, VALUE varchar(20));
+CREATE TABLE openwebinar_oracle_docker(key integer, value varchar(20));
 
 SELECT * FROM  openwebinar_oracle_docker;
 
