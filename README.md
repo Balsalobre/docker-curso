@@ -7,8 +7,7 @@
     Pasos a seguir:
     - a) Cambiar el directorio del root de docker.
     - b) Conservar los archivos moviéndolos a la nueva localización.
-    
-    Consultar sección 4 del curso en udemy.
+
 2. La capas en un dockerfile son de solo lectura si generamos una imagen con el mismo nombre:tag.
 Se crea lo que se llama una Dangling Image 'Imagen colgada'.
 
